@@ -4,7 +4,26 @@
    {{/if}}
    <div class="cont_ytc clearfix">
       <div class="l_ytc">
-         <Carousel list="{{carouselList}}" slot="{{carouselTpl}}" width="120" height="155"></Carousel>
+         <Carousel
+            interval="3000"
+            width="120"
+            height="155"
+            btns="hover">
+            {{#list carouselList as item by item_index}}
+            <Carousel.Item>
+               <div class="carousel-item">
+                  <a href="{{item.url}}" target="_blank">
+                     <img src="{{item.pic | clipImage:'120_155_75'}}" width="120" height="155" alt="">
+                     <p class="ext">
+                        <span class="bg"></span>
+                        <span class="title">{{item.title}}</span>
+                     </p>
+                     <b class="tag" c-hide="!item.keywords">{{item.keywords}}</b>
+                  </a>
+               </div>
+            </Carousel.Item>
+            {{/list}}
+         </Carousel>
       </div>
       <div class="r_ytc">
          <ul class="text-list">

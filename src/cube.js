@@ -1,26 +1,13 @@
-import Carousel from './components/Carousel/index.js'
-
 export default {
   data : {
     loading: true,
     carouselList: [],
     textList: [],
     hotTopicList: [],
-    picList: [],
-    carouselTpl: [
-      '<a href="{{item.url}}" target="_blank">',
-        '<img src="{{item.pic | clipImage:\'120_155_75\'}}" width="120" height="155" alt="">',
-        '<p class="ext">',
-          '<span class="bg"></span>',
-          '<span class="title">{{item.title}}</span>',
-        '</p>',
-        '<b class="tag" c-hide="!item.keywords">{{item.keywords}}</b>',
-      '</a>',
-    ].join('')
+    picList: []
   },
   onLoad(){
     /*cube 被加载之后 */
-    this.createComponent(Carousel)
   },
   onShow(){
     /*cube 展示之后，会被多次调用 */
